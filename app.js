@@ -42,3 +42,19 @@ var Avatar = function() {
 }
 
 <Avatar username="shivvy" />
+
+////// Imperative vs Declarative
+// Imperative (How)
+
+var numbers = [4, 2, 3, 6]
+var total = 0
+for (var i = 0; i < numbers.length; i++) {
+  total += numbers[i]
+}
+
+// Declarative (What)
+
+var numbers = [4, 2, 3, 6]
+numbers.reduce(function (previous, current)
+  return previous + current
+})
