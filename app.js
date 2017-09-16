@@ -15,3 +15,30 @@ var getAvatarInfo = function (username) {
 }
 
 getAvatarInfo('shivvy')
+
+////////////////////////
+
+var ProfilePic = function() {
+  return (
+    <img src={'https://photo.fb/com/' + this.props.username} />
+  )
+}
+
+var ProfileLink = function() {
+  return (
+    <a href={'https://www.fb.com/' + this.props.username}>
+      {this.props.username}
+    </a>
+  )
+}
+
+var Avatar = function() {
+  return (
+    <div>
+      <ProfilePic username={this.props.username} />
+      <ProfilePic username={this.props.username} />
+    </div>
+  )
+}
+
+<Avatar username="shivvy" />
