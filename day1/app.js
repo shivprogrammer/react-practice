@@ -114,3 +114,16 @@ module.exports = {
     })
   ]
 };
+
+// babel file
+"babel": {
+  "presets": [
+    "env",
+    "react"
+  ]
+}
+
+// axios
+function getRepos(username) {
+  return axios.get('https://api.github.com/users' + username + '/repos' + param + '&per_page=100');
+}
