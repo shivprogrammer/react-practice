@@ -4,7 +4,7 @@
   "description": "Learning the other main front end framework to become a more proficient programmer",
   "main": "index.js",
   "scripts": {
-    "create": "webpack"
+    "start": "webpack-dev-server --open"
   },
   "babel": {
     "presets": ["env", "react"]
