@@ -1,7 +1,7 @@
 class Avatar extends React.Component {
   render() {
     return (
-      <img src={''} />
+      <img src={this.props.img} />
     )
   }
 }
@@ -9,7 +9,7 @@ class Avatar extends React.Component {
 class Label extends React.Component {
   render() {
     return (
-      <h1>Name: </h1>
+      <h1>Name: {this.props.name}</h1>
     )
   }
 }
@@ -17,7 +17,7 @@ class Label extends React.Component {
 class ScreenName extends React.Component {
   render() {
     return (
-      <h3>Username: </h3>
+      <h3>Username: {this.props.username}</h3>
     )
   }
 }
@@ -26,9 +26,9 @@ class Badge extends React.Component {
   render() {
     return (
       <div>
-        <Avatar />
-        <Label />
-        <ScreenName />
+        <Avatar img={this.props.user.img}/>
+        <Label name={this.props.user.name}/>
+        <ScreenName username={this.props.user.username}/>
       </div>
     )
   }
