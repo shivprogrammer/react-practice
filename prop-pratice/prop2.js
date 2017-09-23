@@ -8,9 +8,9 @@ class Badge extends React.Component {
   render() {
     return (
       <div>
-        <img src={''} />
-        <h1>Name: </h1>
-        <h3>username: </h3>
+        <img src={this.props.user.img} />
+        <h1>Name: {this.props.user.name}</h1>
+        <h3>username: {this.props.user.username}</h3>
       </div>
     )
   }
