@@ -40,7 +40,7 @@ class Badge extends React.Component {
 
 Badge.PropTypes = {
   img: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequire,
+  name: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired
 }
 
