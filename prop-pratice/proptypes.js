@@ -18,5 +18,10 @@ class Badge extends React.Component {
 }
 
 ReactDOM.render(
-  // <Badge
-)
+  <Badge
+    name='Shiv'
+    username='shivvy'
+    img='https://i.pinimg.com/736x/b8/be/f5/b8bef5902e49262e301b4134ae48fb9b--ganesha-paintings-ganesha-art.jpg'
+  />,
+  document.getElementById('root')
+);
