@@ -4,14 +4,18 @@ class Users extends React.Component {
       <div>
         <h1>Friends</h1>
         <ul>
-          {/*Create an <li> for every name in the list array who is also your friend*/}
+          {this.props.list.filter(function (user) {
+            return <li>{user.friend === true}</li>
+          })}
         </ul>
-        
+
         <hr />
 
         <h1> Non Friends </h1>
         <ul>
-          {/*Create an <li> for every name in the list array who is NOT your friend*/}
+          {this.props.list.filter(function (user) {
+            return <li>{user.friend === false}</li>
+          })}
         </ul>
       </div>
     )
