@@ -1,7 +1,7 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-require('./index.css');
-
+// var React = require('react');
+// var ReactDOM = require('react-dom');
+// require('./index.css');
+//
 // class App extends React.Component {
 //   render() {
 //     return (
@@ -20,6 +20,7 @@ require('./index.css');
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+var PropTypes = require('prop-types');
 
 class Badge extends React.Component {
   render() {
@@ -35,6 +36,12 @@ class Badge extends React.Component {
       </div>
     )
   }
+}
+
+Badge.PropTypes = {
+  img: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequire,
+  username: PropTypes.string.isRequired
 }
 
 ReactDOM.render(
