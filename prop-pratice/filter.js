@@ -1,13 +1,19 @@
 class Users extends React.Component {
   render() {
+    var friends = {this.props.list.filter(function (user) {
+      return user.friend === true;
+    });
+
+    var nonFriends = {this.props.list.filter(function (user) {
+      return user.friend === false;
+    });
+
     return (
       <div>
         <h1>Friends</h1>
         <ul>
-          {this.props.list.filter(function (user) {
-            return user.friend === true
-          }).map(function (user) {
-            return <li>user.name</li>
+          {friends.map(function (user) {
+            return <li key={user.name}>user.name</li>
           })}
         </ul>
 
@@ -15,10 +21,8 @@ class Users extends React.Component {
 
         <h1> Non Friends </h1>
         <ul>
-          {this.props.list.filter(function (user) {
-            return user.friend === false
-          }).map(function (user) {
-            return <li>{user.name}</li>
+          {nonFriends.map(function (user) {
+            return <li key={user.name}>{user.name}</li>
           })}
         </ul>
       </div>
