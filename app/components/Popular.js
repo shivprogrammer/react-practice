@@ -31,23 +31,30 @@ class Popular extends React.Component {
     super(props);
     this.state = {
       selectedLanguage: 'All',
-      repos: null,
+      repos: null
     };
 
     this.updateLanguage = this.updateLanguage.bind(this);
   }
   componentDidMount () {
-    api.fetchPopularRepos(this.state.selectedLanguage)
-      .then(function (repos) {
-        console.log(repos)
-      })
+    this.updateLanguage(this.state.selectedLanguage);
   }
   updateLanguage(lang) {
     this.setState(function () {
       return {
-        selectedLanguage: lang
+        selectedLanguage: lang,
+        repos: null
       }
     });
+
+    api.fetchPopularRepos(this.state.selectedLanguage)
+      .then(function (repos) {
+        this.setState(function () {
+          return {
+            repos: repos
+          }
+        })
+      }.bind(this));
   }
 
   render() {
@@ -57,6 +64,7 @@ class Popular extends React.Component {
           selectedLanguage={this.state.selectedLanguage}
           onSelect={this.updateLanguage}
           />
+          {JSON.stringify(this.state.repos, null, 2)}
       </div>
     )
   }
