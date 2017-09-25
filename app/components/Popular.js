@@ -22,7 +22,7 @@ function SelectLanguage (props) {
 }
 
 function RepoGrid (props) {
-  return *(
+  return (
     <ul className='popular-list'>
       {props.repos.map(function (repo, index) {
         return (
@@ -45,6 +45,10 @@ function RepoGrid (props) {
       })}
     </ul>
   )
+}
+
+RepoGrid.propTypes = {
+  repos: PropTypes.array.isRequired
 }
 
 SelectLanguage.propTypes = {
@@ -90,7 +94,9 @@ class Popular extends React.Component {
           selectedLanguage={this.state.selectedLanguage}
           onSelect={this.updateLanguage}
         />
-        <RepoGrid repos={this.state.repos} />
+        {!this.state.repos
+          ? <p>LOADING</p>
+          : <RepoGrid repos={this.state.repos} />}
       </div>
     )
   }
