@@ -33,7 +33,7 @@ class Loading extends React.Component {
           }
         })
       }
-    }, 300)
+    }.bind(this), 300)
   }
   render() {
     return (
