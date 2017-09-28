@@ -1,6 +1,7 @@
 var React = require('react');
 var PropTypes = require('prop-types');
 var Link = require('react-router-dom').Link;
+var PlayerPreview = require('./PlayerPreview');
 
 class PlayerInput extends React.Component {
   constructor(props) {
@@ -116,18 +117,13 @@ class Battle extends React.Component {
           {playerOneImage !== null &&
             <PlayerPreview
               avatar={playerOneImage}
-              username={playerOneName}
-              onReset={this.handleReset}
-              id='playerOne'
-            />}
-
-          {playerTwoImage !== null &&
-            <PlayerPreview
-              avatar={playerTwoImage}
-              username={playerTwoName}
-              onReset={this.handleReset}
-              id='playerTwo'
-            />}
+              username={playerOneName}>
+                <button
+                  className='reset'
+                  onClick={props.handleReset.bind(null, 'playerOne')}>
+                    Reset
+                </button>
+            </PlayerPreview>}
 
           {!playerTwoName &&
             <PlayerInput
@@ -135,6 +131,17 @@ class Battle extends React.Component {
               label='Player Two'
               onSubmit={this.handleSubmit}
             />}
+
+          {playerTwoImage !== null &&
+            <PlayerPreview
+              avatar={playerTwoImage}
+              username={playerTwoName}
+                <button
+                  className='reset'
+                  onClick={props.handleReset.bind(null, 'playerTwo')}>
+                    Reset
+                </button>
+            </PlayerPreview>}
         </div>
 
         {playerOneImage && playerTwoImage &&
