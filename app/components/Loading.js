@@ -13,7 +13,7 @@ class Loading extends React.Component {
     super(props);
 
     this.state = {
-      text: 'Loading'
+      text: props.text
     }
   }
   render() {
@@ -23,6 +23,14 @@ class Loading extends React.Component {
       </p>
     )
   }
+}
+
+Loading.propTypes = {
+  text: PropTypes.string.isRequired
+}
+
+Loading.defaultProps = {
+  text: 'Loading'
 }
 
 module.exports = Loading;
