@@ -1,7 +1,24 @@
 var React = require('react');
+var PropTypes = require('prop-types');
 var queryString = require('query-string');
 var api = require('../utils/api');
 var Link = require('react-router-dom').Link;
+
+function Player (props) {
+  return (
+    <div>
+      <h1 className='header'>{props.label}</h1>
+      <h3 style={{textAlign: 'center'}}>Score: {props.score}</h3>
+    </div>
+  )
+}
+
+Player.propTypes = {
+  label: PropTypes.string.isRequired,
+  score: PropTypes.number.isRequired,
+  profile: PropTypes.object.isRequired
+
+}
 
 class Results extends React.Component {
   constructor(props) {
